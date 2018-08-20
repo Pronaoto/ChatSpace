@@ -55,9 +55,9 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
--has_many :messages
--has_many:members
--has_and_belongs_to_many :groups
+- has_many :messages
+- has_many:members
+- has_and_belongs_to_many :groups
 
 ## groups table
 |column|type|Options|
@@ -65,10 +65,10 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
-###Association
--belongs_to :user
--has_many :messages
--has_many :members
+### Association
+- belongs_to :user
+- has_many :messages
+- has_many :members
 
 
 
