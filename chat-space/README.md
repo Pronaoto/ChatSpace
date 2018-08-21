@@ -26,20 +26,18 @@ Things you may want to cover:
 ## members table
 |column|type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
+|user_id|reference|null: false,foreign_key :ture|
 |group_id|integer|null: false|
 
 ### Association
 - belongs_to :user
 - belongs_to :group
 
-
 ## messages table
 |column|type|Options|
 |------|----|-------|
 |body|text|-------|
 |image|string|-------|
-|group_id|integer|null: false|
 
 ### Association
 - belongs_to :user
@@ -48,7 +46,6 @@ Things you may want to cover:
 ## users table
 |column|type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
 |name|string|null: false,unique: true|
 |email|string|null: false|
 
@@ -57,13 +54,10 @@ Things you may want to cover:
 - has_many :groups, through: :members
 - has_many :messages
 
-
 ## groups table
 |column|type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
-|group_id|integer|null: false|
-
+|name|string|null: false,unique: true|
 
 ### Association
 - has_many :members
