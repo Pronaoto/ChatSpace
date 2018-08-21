@@ -50,14 +50,14 @@ Things you may want to cover:
 |column|type|Options|
 |------|----|-------|
 |user_id|integer|null: false|
-|name|string|null: false|
-|email|integer|null: false|
+|name|string|null: false,unique: true|
+|email|string|null: false|
 |own_group_id|integer|null: false|
 
 ### Association
+- has_many :members
 - has_many :groups, through: :members
 - has_many :messages
-- has_many :menmbers
 
 
 ## groups table
@@ -70,8 +70,8 @@ Things you may want to cover:
 ### Association
 - has_many :members
 - has_many :users, through: :members
-- belongs_to :user
 - has_many :messages
+
 
 
 
