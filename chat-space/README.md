@@ -37,7 +37,6 @@ Things you may want to cover:
 ## messages table
 |column|type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
 |body|text|-------|
 |image|string|-------|
 |group_id|integer|null: false|
@@ -52,7 +51,6 @@ Things you may want to cover:
 |user_id|integer|null: false|
 |name|string|null: false,unique: true|
 |email|string|null: false|
-|own_group_id|integer|null: false|
 
 ### Association
 - has_many :members
