@@ -27,7 +27,7 @@ Things you may want to cover:
 |column|type|Options|
 |------|----|-------|
 |user_id|reference|null: false,foreign_key :ture|
-|group_id|integer|null: false|
+|group_id|reference|null: false,foreign_key :ture|
 
 ### Association
 - belongs_to :user
