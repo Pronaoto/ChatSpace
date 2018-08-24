@@ -17,7 +17,7 @@ a {
   width: 300px;
   float: left;
   position: relative;
-  .side__user {
+  &__user {
   background-color: $darknavy;
   height: 15%;
   width: 100%;
@@ -30,7 +30,7 @@ a {
     position: absolute;
     top: 0;
     bottom: 0;
-    .sideuser__detail--name {
+    &--name {
       color: $white;
       font-size: 16px;
       font-weight: bold;
