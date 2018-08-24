@@ -1,2 +1,41 @@
-%h1 Messages#index
-%p Find me in app/views/messages/index.html.haml
+= render partial: "message"
+
+.chatroom
+  .chatroom__header
+    .chatroom__header-name
+      Akikawa
+    .chatroom__header-member
+      Member:Naoto
+    %a.chatroom__header-edit{href: ""}edit
+  .chatroom__body
+    .chatroom__body-message.clearfix
+      .chatroom__body--message-name
+        Naoto
+      .chatroom__body--message-time
+        2018/8/12 AM10:00
+      .chatroom__body--message-body
+        また会いましょう !
+      .chatroom__body--message-name
+        Naoto
+      .chatroom__body--message-time
+        2018/8/12 AM10:00
+      .chatroom__body--message-body
+        また会いましょう !
+      .chatroom__body--message-name
+        Naoto
+      .chatroom__body--message-time
+        2018/8/12 AM10:00
+      .chatroom__body--message-body
+        また会いましょう !
+  .chatroom__footer
+    .chatroom__footer-message
+      %form.chatroom__footer--message-form{action: "", method: "post"}
+      %input.chatroom__footer--message-input{name: "utf-8", size: "100", type: "text", placeholder: " type a message"}/
+      .chatroom__footer--message-image
+        %label.chatroom__footer--message-image{for: "message_image"}
+        %i.fa.fa-image{href: ""}
+    .chatroom__footer-body
+      %input.chatroom__footer--botton{type: "submit", value: "Send"}/
+
+
+
