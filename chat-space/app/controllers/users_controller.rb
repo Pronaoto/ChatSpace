@@ -3,8 +3,8 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def upadate
-    if current_user.update(user_paramas) #保存できた場合
+  def update
+    if current_user.update(user_params) #保存できた場合
       redirect_to root_path
     else
       render :edit #できなかった場合
