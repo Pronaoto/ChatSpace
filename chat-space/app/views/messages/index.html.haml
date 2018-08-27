@@ -29,6 +29,9 @@
         また会いましょう !
   .chatroom__footer
     .chatroom__footer-message
+      .form
+        = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'chatroom__footer-message', placeholder: 'type a message'
       %form.chatroom__footer--message-form{action: "", method: "post"}
       %input.chatroom__footer--message-input{name: "utf-8", size: "100", type: "text", placeholder: " type a message"}/
       .chatroom__footer--message-image
