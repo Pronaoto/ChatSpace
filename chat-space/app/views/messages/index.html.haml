@@ -34,5 +34,6 @@
         = f.text_field :content, class: 'chatroom__footer--message-input',size: '90', placeholder: ' type a message'
         .chatroom__footer--message-image
           = f.label :image, class: 'chatroom__footer--message-image' do
-            %i.fa.fa-image
+            %i.far.fa-image
+              = f.file_field :image, style: 'display: none;'
           = f.submit 'Send', class: 'chatroom__footer--botton'
