@@ -21,9 +21,9 @@
 .chatroom
   .chatroom__header
     .chatroom__header-name
-      Akikawa
+      = @group.name
     .chatroom__header-member
-      Member:Naoto
+      = @group.users.name
     %a.chatroom__header-edit{href: ""}edit
   .chatroom__body
     .chatroom__body-message.clearfix
