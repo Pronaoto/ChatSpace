@@ -1,43 +1,32 @@
 
 $(document).on('turbolinks:load', function() {
   function buildHTML(message){
-    console.log(message.image)
-        if (message.image)
-    {
+    var image = "";
+
+    image = (message.image) ? `<img class="lower-message__image" src="${ message.image }">`: "";
 
     var html =
-    `<div class='chatroom__body-message clearfix'>
-                    <div class='chatroom__body--message-name'>
-                        ${message.user_name}
-                    </div>
-                    <div class='chatroom__body--message-time'>
-                        ${message.created_at}
-                    </div>
-                    <div class='chatroom__body--message-body'>
-                        <p>${message.content}</p>
-                        <img class="lower-message__image" src="${ message.image }">
-                    </div>
-                </div>`}
-    else
-    {
-      var html =
-      `<div class='chatroom__body-message clearfix'>
-                    <div class='chatroom__body--message-name'>
-                        ${message.user_name}
-                    </div>
-                    <div class='chatroom__body--message-time'>
-                        ${message.created_at}
-                    </div>
-                    <div class='chatroom__body--message-body'>
-                        ${message.content}
+                    `<div class='chatroom__body-message clearfix'>
+                        <div class='chatroom__body--message-name'>
+                            ${message.name}
+                        </div>
+                        <div class='chatroom__body--message-time'>
+                            ${message.created_at}
+                        </div>
+                        <div class='chatroom__body--message-body'>
+                            <p>${message.content}</p>
+                            ${image}
+                        </div>
                     </div>`
-    }
       return html;
-  }
+    }
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    var formData = new FormData(this);
+    // console.log($(this));
+
+    var formData = new FormData($(this).get(0));
+    // for(item of formData) { console.log(item); }
     var url = $(this).attr('action');
     $.ajax({
       url: url,
@@ -54,10 +43,10 @@ $(document).on('turbolinks:load', function() {
       $('input').prop('disabled', false);
     })
     .fail(function(){
-      alert('メッセージを入力してください。')
-    })
-    // return false;
-  })
-})
+      alert('メッセージを入力してください。');
+    });
+    //return false;
+  });
+});
 
 
