@@ -24,7 +24,8 @@
       = @group.name
     .chatroom__header-member
       = @group.users.name
-    %a.chatroom__header-edit{href: ""}edit
+    .chatroom__header-edit
+      = link_to "edit", edit_group_path(@group)
   .chatroom__body
     .chatroom__body-message.clearfix
       = render partial: 'message', collection: @messages
