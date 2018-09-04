@@ -1,4 +1,3 @@
-
 $(document).on('turbolinks:load', function() {
   function buildHTML(message){
     var image = "";
@@ -23,10 +22,8 @@ $(document).on('turbolinks:load', function() {
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    // console.log($(this));
 
     var formData = new FormData($(this).get(0));
-    // for(item of formData) { console.log(item); }
     var url = $(this).attr('action');
     $.ajax({
       url: url,
@@ -45,7 +42,6 @@ $(document).on('turbolinks:load', function() {
     .fail(function(){
       alert('メッセージを入力してください。');
     });
-    //return false;
   });
 });
 

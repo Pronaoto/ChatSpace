@@ -21,10 +21,12 @@
 .chatroom
   .chatroom__header
     .chatroom__header-name
-      Akikawa
+      = @group.name
     .chatroom__header-member
-      Member:Naoto
-    %a.chatroom__header-edit{href: ""}edit
+      - @group.users.each do |user|
+        = user.name
+    .chatroom__header-edit
+      = link_to "edit", edit_group_path(@group)
   .chatroom__body
     .chatroom__body-message.clearfix
       = render partial: 'message', collection: @messages
