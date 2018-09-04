@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.where('name LIKE(?)',"%#{params[:keyword]}%")
+    @users = User.where('name LIKE(?)',"%#{params[:keyword]}%").limit[10]
     respond_to do |format|
       format.html
       format.json
@@ -12,10 +12,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(user_params) #保存できた場合
+    if current_user.update(user_params)
       redirect_to root_path
     else
-      render :edit #できなかった場合
+      render :edit
     end
   end
 

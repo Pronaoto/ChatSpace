@@ -26,12 +26,10 @@ $(function() {
                     <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
               </div>`;
   member_list.append(html);
-  // console.log("ok");
     }
 
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
-    // console.log(input);
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -39,7 +37,6 @@ $(function() {
       dataType: 'json'
     })
     .done(function(users){
-      // console.log(users);
       $("#user-search-result").empty();
       if (users.length !== 0) {
         users.forEach(function(user){
@@ -58,14 +55,12 @@ $(function() {
     $('#chat-group-users').val();
       var userId = $(this).data('user-id');
       var userName = $(this).data('user-name');
-      // console.log(this);
       addUser(userId,userName);
       $(this).parent().remove();
     });
 
     $(document).on("click", ".user-search-remove", function () {
       $(this).parent().remove();
-      // console.log(this);
     });
   });
 });
