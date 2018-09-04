@@ -23,7 +23,8 @@
     .chatroom__header-name
       = @group.name
     .chatroom__header-member
-      = @group.users.name
+      - @group.users.each do |user|
+        = user.name
     .chatroom__header-edit
       = link_to "edit", edit_group_path(@group)
   .chatroom__body
