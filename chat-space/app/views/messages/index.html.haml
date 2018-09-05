@@ -28,8 +28,7 @@
     .chatroom__header-edit
       = link_to "edit", edit_group_path(@group)
   .chatroom__body
-    .chatroom__body-message.clearfix
-      = render partial: 'message', collection: @messages
+    = render @messages
   .chatroom__footer
     .chatroom__footer-message
       = form_for [@group, @message] do |f|
